@@ -1,3 +1,5 @@
+import Replicate from "replicate";
+
 const run = document.querySelector("[data-testid=input-form]");
 
 function on_run (event) {
