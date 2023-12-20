@@ -1,4 +1,4 @@
-import Replicate from "replicate";
+import Replicate from "https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js/replicate.js";
 
 const run = document.querySelector("[data-testid=input-form]");
 
