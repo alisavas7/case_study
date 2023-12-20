@@ -51,7 +51,7 @@ function on_run (event) {
     const img = document.querySelector("[data-testid=value-image-image]");
     if (!err) {
         sessionStorage.setItem('image_source', img.src);
-        location.replace("task_two.html");
+        location.replace("https://alisavas7.github.io/task_two/");
     }
 }
 
