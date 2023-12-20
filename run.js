@@ -52,7 +52,7 @@ function on_run (event) {
     if (!err) {
         sessionStorage.setItem('image_source', img.src);
         console.log(img.src);
-        window.location.replace("https://alisavas7.github.io/task_two/");
+        //window.location.replace("https://alisavas7.github.io/task_two/");
     }
 }
 
