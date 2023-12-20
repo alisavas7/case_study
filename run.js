@@ -1,3 +1,4 @@
+import Replicate from "https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js/replicate.js";
 const run = document.querySelector("[data-testid=input-form]");
 
 function on_run (event) {
@@ -57,7 +58,6 @@ function on_run (event) {
 }
 
 async function generate(image_source, input_prompt){
-    import Replicate from "https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js/replicate.js";
     console.log(image_source);
     console.log(input_prompt);
 }
