@@ -60,6 +60,7 @@ async function generate(image_source, input_prompt) {
     let json_input = JSON.stringify({ "image": image_source, "prompt": input_prompt});
     sessionStorage.setItem('JSON', json_input);
     const f = fetch('http://127.0.0.1:5500/generate.js');
+    console.log(f);
 }
 
 function raise_error (message, type) {
