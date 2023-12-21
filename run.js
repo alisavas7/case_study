@@ -50,7 +50,6 @@ function on_run (event) {
 
     const img = document.querySelector("[data-testid=value-image-image]");
     if (!err) {
-        sessionStorage.setItem('image_source', img.src);
         const input_prompt = `${prompt_input.value}, ${hex_map.get(hex_code.value)} color scheme`;
         generate(img.src, prompt_input.value);
         //window.location.replace("https://main.d2shgiuexn56ov.amplifyapp.com/");
@@ -58,10 +57,12 @@ function on_run (event) {
 }
 
 async function generate(image_source, input_prompt) {
-    var inputs = JSON.stringify({ "image": image_source, "prompt": input_prompt});
-    const response = await fetch("http://example.com/movies.json");
-    const movies = await response.json();
-    console.log(movies);
+    let json_input = JSON.stringify({ "image": image_source, "prompt": input_prompt});
+    sessionStorage.setItem('JSON', json_input);
+    let json_output = sessionStorage.getItem('JSON');
+    let output = JSON.parse(json_output);
+    console.log(output.image);
+    console.log(output.prompt);
 }
 
 function raise_error (message, type) {
