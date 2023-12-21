@@ -59,8 +59,9 @@ function on_run (event) {
 
 async function generate(image_source, input_prompt) {
     var inputs = JSON.stringify({ "image": image_source, "prompt": input_prompt});
-    let xhr = new XMLHttpRequest();
-    console.log(xhr);
+    const response = await fetch("http://example.com/movies.json");
+    const movies = await response.json();
+    console.log(movies);
 }
 
 function raise_error (message, type) {
