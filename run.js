@@ -64,7 +64,7 @@ async function generate(image_source, input_prompt) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(json_input),
     });
     const output = await f.response();
     console.log(output);
