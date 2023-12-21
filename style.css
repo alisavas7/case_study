@@ -39,8 +39,6 @@
             display: inline-flex;
         }
 
-        
-
         .ml-2 {
             margin-left: .5rem;
         }
@@ -98,6 +96,11 @@
 
         .mb-3 {
             margin-bottom: .75rem;
+        }
+
+        .max-w-full {
+            margin: auto;
+            display: block;
         }
 
         .mb-21h {
