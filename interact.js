@@ -184,7 +184,6 @@ function on_click () {
     }
 
     function image_src (file) {
-        const img_class = ['inline-flex', 'flex-col'];
         const img_div = document.createElement('div');
         img_div.setAttribute('data-testid', 'value-image-input');
         const img_a = document.createElement('a');
@@ -194,7 +193,6 @@ function on_click () {
         img_a.setAttribute('href', url);
         img_a.setAttribute('rel', 'noreferrer');
         img_a.setAttribute('target', '_blank');
-        img_class.map(img_ => {img_a.classList.add(img_)});
 
         const img = document.createElement('img');
         img.setAttribute('data-testid', 'value-image-image');
