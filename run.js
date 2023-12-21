@@ -51,9 +51,15 @@ function on_run (event) {
     const img = document.querySelector("[data-testid=value-image-image]");
     if (!err) {
         sessionStorage.setItem('image_source', img.src);
-        //generate(img.src, `${prompt_input.value}, ${hex_map.get(hex_code.value)}`);
-        window.location.replace("https://main.d2shgiuexn56ov.amplifyapp.com/");
+        const input_prompt = `${prompt_input.value}, ${hex_map.get(hex_code.value) color scheme}`;
+        generate(img.src, prompt_input.value);
+        //window.location.replace("https://main.d2shgiuexn56ov.amplifyapp.com/");
     }
+}
+
+async function generate(image_source, input_prompt) {
+    var inputs = JSON.stringify({ "image": image_source, "prompt": input_prompt});
+    console.log(inputs);
 }
 
 function raise_error (message, type) {
