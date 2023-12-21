@@ -59,7 +59,8 @@ function on_run (event) {
 
 async function generate(image_source, input_prompt) {
     var inputs = JSON.stringify({ "image": image_source, "prompt": input_prompt});
-    console.log(inputs);
+    const api = fetch("http://127.0.0.1:5500/generate.js");
+    console.log(api);
 }
 
 function raise_error (message, type) {
