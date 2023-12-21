@@ -1,4 +1,3 @@
-import Replicate from "https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js/replicate.js";
 const run = document.querySelector("[data-testid=input-form]");
 
 function on_run (event) {
@@ -52,14 +51,9 @@ function on_run (event) {
     const img = document.querySelector("[data-testid=value-image-image]");
     if (!err) {
         sessionStorage.setItem('image_source', img.src);
-        generate(img.src, `${prompt_input.value}, ${hex_map.get(hex_code.value)}`);
-        //window.location.replace("https://alisavas7.github.io/task_two/");
+        //generate(img.src, `${prompt_input.value}, ${hex_map.get(hex_code.value)}`);
+        window.location.replace("https://main.d2shgiuexn56ov.amplifyapp.com/");
     }
-}
-
-async function generate(image_source, input_prompt){
-    console.log(image_source);
-    console.log(input_prompt);
 }
 
 function raise_error (message, type) {
