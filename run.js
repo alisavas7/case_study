@@ -51,7 +51,7 @@ function on_run (event) {
     const img = document.querySelector("[data-testid=value-image-image]");
     if (!err) {
         sessionStorage.setItem('image_source', img.src);
-        const input_prompt = `${prompt_input.value}, ${hex_map.get(hex_code.value) color scheme}`;
+        const input_prompt = `${prompt_input.value}, ${hex_map.get(hex_code.value)} color scheme`;
         generate(img.src, prompt_input.value);
         //window.location.replace("https://main.d2shgiuexn56ov.amplifyapp.com/");
     }
