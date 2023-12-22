@@ -57,17 +57,7 @@ function on_run (event) {
 }
 
 async function generate(image_source, input_prompt) {
-    let json_input = JSON.stringify({ "image": image_source, "prompt": input_prompt});
-    sessionStorage.setItem('JSON', json_input);
-    const f = await fetch('http://127.0.0.1:5500/generate.js', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(json_input),
-    });
-    const output = await f.response();
-    console.log(output);
+    const axios = require('axios');
 }
 
 function raise_error (message, type) {
