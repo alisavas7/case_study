@@ -1,4 +1,5 @@
 const run = document.querySelector("[data-testid=input-form]");
+const axios = require('axios');
 
 function on_run (event) {
     event.preventDefault();
@@ -57,7 +58,7 @@ function on_run (event) {
 }
 
 async function generate(image_source, input_prompt) {
-    const axios = require('axios');
+    
 }
 
 function raise_error (message, type) {
