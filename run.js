@@ -62,7 +62,7 @@ async function generate(image_source, input_prompt) {
         'http://localhost:8080/',
         {
             method: 'POST',
-            mode: 'cors',
+            mode: 'no-cors',
             cache: 'no-cache',
             credentials: 'same-origin',
             headers: {
