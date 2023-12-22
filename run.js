@@ -57,8 +57,23 @@ function on_run (event) {
     }
 }
 
-function generate(image_source, input_prompt) {
-    return image_source;
+async function generate(image_source, input_prompt) {
+    const response = await fetch(
+        'http://localhost:8080/',
+        {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({'image': image_source, 'prompt': input_prompt}),
+        }
+    );
+    console.log(response);
 }
 
 function raise_error (message, type) {
