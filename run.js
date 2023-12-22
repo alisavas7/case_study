@@ -1,5 +1,4 @@
 const run = document.querySelector("[data-testid=input-form]");
-const axios = require('axios');
 
 function on_run (event) {
     event.preventDefault();
@@ -52,13 +51,14 @@ function on_run (event) {
     const img = document.querySelector("[data-testid=value-image-image]");
     if (!err) {
         const input_prompt = `${prompt_input.value}, ${hex_map.get(hex_code.value)} color scheme`;
-        generate(img.src, prompt_input.value);
+        const output_img = generate(img.src, prompt_input.value);
+        sessionStorage.setItem('output', output_img);
         //window.location.replace("https://main.d2shgiuexn56ov.amplifyapp.com/");
     }
 }
 
-async function generate(image_source, input_prompt) {
-    
+function generate(image_source, input_prompt) {
+    return image_source;
 }
 
 function raise_error (message, type) {
