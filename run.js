@@ -88,7 +88,7 @@ async function generate(image_source, input_prompt) {
           console.error('There was a problem sending the data:', error);
         });
 
-    return = "";
+    return "";
 }
 
 function raise_error (message, type) {
