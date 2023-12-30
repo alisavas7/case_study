@@ -58,22 +58,37 @@ function on_run (event) {
 }
 
 async function generate(image_source, input_prompt) {
-    const response = await fetch(
-        'http://localhost:8080/',
-        {
-            method: 'POST',
-            mode: 'no-cors',
-            cache: 'no-cache',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
-            body: JSON.stringify({'image': image_source, 'prompt': input_prompt}),
-        }
-    );
-    console.log(response);
+    
+    const apiUrl = 'http://localhost:8080/';
+    const inputs = {
+        image : image_source,
+        prompt : input_prompt
+    };
+    
+    const options = {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true,
+        },
+        body: JSON.stringify(inputs)
+    }
+
+    fetch(apiUrl, options)
+        .then(response => {
+            console.log(response.status)
+            console.log(response.ok);
+        })
+        .then(data => {
+          console.log('Data sent successfully:', data);
+        })
+        .catch(error => {
+          console.error('There was a problem sending the data:', error);
+        });
+
+    return = "";
 }
 
 function raise_error (message, type) {
